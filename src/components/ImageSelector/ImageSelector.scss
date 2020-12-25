@@ -1,0 +1,14 @@
+.image-selector {
+  display: flex;
+  align-items: center;
+
+  .button {
+    border-radius: 50%;
+    padding: 10px;
+    min-width: unset;
+  }
+
+  > *:not(:last-child) {
+    margin-right: var(--padding);
+  }
+}

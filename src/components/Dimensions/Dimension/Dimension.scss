@@ -1,0 +1,36 @@
+.dimension-container {
+  grid-template-columns: repeat(2, auto);
+
+  .dimension {
+    grid-template-columns: repeat(2, auto);
+    background-color: mediumaquamarine;
+    padding: var(--padding);
+    color: inherit;
+    border-radius: var(--rounded-border);
+
+    .width-and-height {
+      grid-template-columns: repeat(3, auto);
+
+      .input {
+        width: 50px;
+      }
+    }
+
+    .title {
+      grid-template-columns: repeat(2, auto);
+
+      .input {
+        width: 100px;
+      }
+    }
+
+    .input {
+      padding: 0 4px;
+      color: inherit;
+    }
+  }
+
+  .button {
+    height: 100%;
+  }
+}

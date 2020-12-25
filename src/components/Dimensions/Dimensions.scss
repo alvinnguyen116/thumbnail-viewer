@@ -1,0 +1,35 @@
+.dimensions-container {
+  padding: var(--padding);
+  background-color: var(--foreground-color);
+  border-radius: var(--rounded-border);
+  display: flex;
+  flex-direction: column;
+
+  > .app-label {
+    text-align: center;
+    margin-bottom: var(--padding);
+  }
+
+  .dimensions {
+    margin-bottom: var(--padding);
+
+    > *:not(:last-child) {
+      margin-bottom: var(--padding);
+    }
+  }
+
+  .buttons {
+    flex-grow: 1;
+    align-items: flex-end;
+    grid-template-columns: repeat(2, auto);
+    width: 100%;
+
+    .button {
+      width: fit-content;
+
+      &:nth-child(2) {
+        justify-self: flex-end;
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+/* Globals */
+* {
+ --rounded-border: 4px;
+ --foreground-color: lightslategray;
+ --font-color: white;
+ --padding: 1rem;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.app-label {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.display-grid {
+  grid-gap: var(--padding);
+  display: grid;
+  width: fit-content;
+  align-items: center;
+}
+
+.special-scroll {
+  overflow-y: scroll;
+  height: -webkit-fill-available;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: var(--rounded-border);
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, .5);
+  }
+}
+
+/* App styles */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: var(--padding);
+  color: var(--font-color);
+  box-sizing: border-box;
+
+  .body-and-rails {
+    margin-top: var(--padding);
+    display: flex;
+    height: calc(100vh - 56px - calc(var(--padding) * 3));
+  }
+
+  .body {
+    position: relative;
+    flex-grow: 1;
+    background: var(--foreground-color);
+    border-radius: var(--rounded-border);
+    margin-right: var(--padding);
+    padding: var(--padding);
+
+    .top,
+    .center {
+      position: absolute;
+      transition: all 1s ease-in-out;
+    }
+
+    .top {
+      top: var(--padding);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .center {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .preview-container {
+      margin-top: calc(44px + calc(var(--padding) * 2));
+      display: flex;
+      flex-flow: wrap;
+      transition: opacity .5s ease-in-out;
+      opacity: 0;
+
+      &.entered {
+        opacity: 1;
+      }
+
+      > *:not(:last-child) {
+        margin: 0 var(--padding) var(--padding) 0;
+      }
+    }
+
+    .spinner {
+      --length: calc(50% - 40px);
+      position: absolute;
+      top: var(--length);
+      left: var(--length);
+    }
+  }
+}

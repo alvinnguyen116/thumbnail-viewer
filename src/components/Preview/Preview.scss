@@ -1,0 +1,19 @@
+.preview {
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding);
+  background-color: mediumslateblue;
+  width: fit-content;
+  height: fit-content;
+  border-radius: var(--rounded-border);
+
+  .title {
+    padding-bottom: var(--padding);
+  }
+
+  .img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}

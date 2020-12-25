@@ -1,0 +1,6 @@
+.header {
+  background-color: black;
+  border-radius: var(--rounded-border);
+  padding: var(--padding);
+  grid-template-columns: repeat(2, auto);
+}
